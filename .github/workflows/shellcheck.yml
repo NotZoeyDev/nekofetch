@@ -1,0 +1,16 @@
+# Run shellcheck on commit
+
+name: Check with shellcheck
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run shellcheck
+      uses: ludeeus/action-shellcheck@master
