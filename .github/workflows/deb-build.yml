@@ -30,8 +30,13 @@ jobs:
         version: 0.2
         arch: 'amd64'
         desc: 'neofetch with nekos'
-    - name: Upload debs as artifacts
+    - name: Upload iphoneos-arm deb as artifact
       uses: actions/upload-artifact@v2
       with:
-        name: deb
-        path: nekofetch*.deb
+        name: iphoneos-arm-deb
+        path: nekofetch*iphoneos-arm.deb
+    - name: Upload arm64 deb as artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: arm64-deb
+        path: nekofetch*arm64.deb
