@@ -21,6 +21,6 @@ jobs:
         package: nekofetch
         package_root: debpkg
         maintainer: propr and bbaovanc
-        version: 0.2-${{ steps.vars.outputs.sha_short }}
+        version: 0.2
         arch: 'amd64'
         desc: 'neofetch with nekos'
