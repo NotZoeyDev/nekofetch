@@ -15,14 +15,14 @@ jobs:
     - name: Get commit hash
       run: |
         echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
-    - name: Build .deb
+    - name: Build deb for iphoneos-arm
       uses: jiro4989/build-deb-action@v2
       with:
         package: nekofetch
         package_root: debpkg
         maintainer: propr and bbaovanc
         version: 0.2
-        arch: 'amd64'
+        arch: 'iphoneos-arm'
         desc: 'neofetch with nekos'
     - name: Upload deb as artifact
       uses: actions/upload-artifact@v2
