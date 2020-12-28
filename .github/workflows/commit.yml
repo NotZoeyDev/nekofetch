@@ -7,14 +7,18 @@ on:
   pull_request:
 
 jobs:
-  build:
+  shellcheck:
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
     - name: Run shellcheck
       uses: ludeeus/action-shellcheck@master
 
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
     - name: Build deb for iphoneos-arm
       uses: jiro4989/build-deb-action@v2
       with:
