@@ -24,3 +24,8 @@ jobs:
         version: 0.2
         arch: 'amd64'
         desc: 'neofetch with nekos'
+    - name: Upload deb as artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: deb
+        path: *.deb
