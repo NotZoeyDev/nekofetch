@@ -1,6 +1,6 @@
 # Build a deb artifact on commit
 
-name: Build .deb on commit
+name: Build deb on commit
 
 on:
   push:
