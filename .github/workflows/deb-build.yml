@@ -1,0 +1,25 @@
+# Build a deb artifact on commit
+
+name: Build .deb on commit
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build .deb
+      uses: jiro4989/build-deb-action@v2
+      with:
+        package: nekofetch
+        package_root: debpkg
+        maintainer: propr and bbaovanc
+        version: ${{ github.ref }}
+        arch: 'amd64'
+        desc: 'neofetch with nekos'
