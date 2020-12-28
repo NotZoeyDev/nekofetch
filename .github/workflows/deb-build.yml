@@ -12,16 +12,15 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Test
+    - name: Get commit hash
       run: |
-        echo $RELEASE_VERSION
-        echo ${{ env.RELEASE_VERSION }}
+        echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
     - name: Build .deb
       uses: jiro4989/build-deb-action@v2
       with:
         package: nekofetch
         package_root: debpkg
         maintainer: propr and bbaovanc
-        version: ${{ github.ref }}
+        version: 0.2-${{ steps.vars.outputs.sha_short }}
         arch: 'amd64'
         desc: 'neofetch with nekos'
