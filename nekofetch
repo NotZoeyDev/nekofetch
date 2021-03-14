@@ -29,6 +29,8 @@ if [ "$TERM" = "xterm-kitty" ]; then
         jp2a --height="$height" "$tmpfile.jpg" > "$tmpfile"
         neofetch --source "$tmpfile"
     fi
+elif [ "$LC_TERMINAL" = "iTerm2" ]; then
+    neofetch --iterm2 "$tmpfile.jpg"
 else
     jp2a --height="$height" "$tmpfile.jpg" > "$tmpfile"
     neofetch --source "$tmpfile"
